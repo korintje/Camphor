@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mery (x64)
+Exec=env WINEPREFIX="/home/hosomi/.wine" wine-stable C:\\\\Program\\ Files\\\\Mery\\\\Mery.exe 
+Type=Application
+StartupNotify=true
+Path=/home/hosomi/.wine/dosdevices/c:/Program Files/Mery
+Icon=28C7_Mery.0
+StartupWMClass=mery.exe

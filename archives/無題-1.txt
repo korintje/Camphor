@@ -1,0 +1,9 @@
+* cmp: code-write with tag
+tmp_svgkeiyu
+all tags incl. bokeh
+
+cmp-svg-layerとall-svg-layer切り替え
+レイヤ管理で良いのでは（mark as cmp layer）
+
+light-weight viewer mode搭載
+(Edit with Camphor, Edit with Inkscape)

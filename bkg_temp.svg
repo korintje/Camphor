@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:camphor="https://korintje.com" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" height="345.6pt" id="svg1737" version="1.1" viewbox="0 0 460.8 345.6" width="460.8pt" sodipodi:docname="test5.svg" inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" id="namedview1739" objecttolerance="10" pagecolor="#ffffff" showgrid="false" inkscape:current-layer="layer1" inkscape:cx="195.08282" inkscape:cy="163.69858" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="995" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="1920" inkscape:window-y="0" inkscape:zoom="1.2276159" />
+  <defs id="defs1184">
+    <style id="style1182" type="text/css">
+		*{stroke-linecap:butt;stroke-linejoin:round;} 
+		</style>
+  </defs>
+  <metadata id="metadata1186">
+    <camphor:script>import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.arange(0.0, 2.0, 0.01)
+s = 1 + np.sin(2 * np.pi * t)
+fig, ax = plt.subplots()
+
+ax.plot(t, s)
+ax.set(xlabel='time (s)', ylabel='voltage (mV)',  title='About as simple as it gets, folks')
+ax.grid()
+</camphor:script>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs1735">
+    <clippath id="p82434c69f8">
+      <rect height="266.112" width="357.12" x="57.6" y="41.472" />
+    </clippath>
+  </defs>
+  <g id="layer2" style="display:inline;stroke-linecap:butt;stroke-linejoin:round;opacity:0.478" inkscape:groupmode="layer" inkscape:label="Layer 2">
+    <rect height="142.55273" id="rect2074" style="stroke-linecap:butt;stroke-linejoin:round;fill:#00ffff" width="203.64676" x="188.1696" y="108.08382" />
+  </g>
+</svg>
