@@ -60,7 +60,6 @@ class MainWindow(QMainWindow):
         self.script_window.button_read.clicked.connect(lambda: self.read_svg())
         self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
 
-
         #Assign Shortcuts
         self.shortcut_update = QShortcut(QKeySequence("Ctrl+R"), self)
         self.shortcut_update.activated.connect(lambda: self.run_script())
@@ -106,11 +105,9 @@ class MainWindow(QMainWindow):
     @pyqtSlot()
     def run_script(self):
         self.output_window.stdout.clear()
-        #self.output_window.errout.clear()
         script = self.script_window.edit.toPlainText()
         self.process.start('python',['-c', script])
         self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
-        #connect(cameraControl, SIGNAL(finished(int , QProcess::ExitStatus )), this, SLOT(on_cameraControlExit(int , QProcess::ExitStatus )));
 
     @pyqtSlot()
     def update_svg(self):
@@ -123,7 +120,6 @@ class MainWindow(QMainWindow):
         if err_or_std == "std":
             message = self.process.readAllStandardOutput().data().decode("utf8")
             self.output_window.stdout.setTextColor(QColor(48, 255, 48))
-            #self.output_window.tabs.setCurrentIndex(0)
         else: #if err_or_std == "error":
             message = self.process.readAllStandardError().data().decode("utf8")
             self.output_window.stdout.setTextColor(QColor(255, 48, 48))
@@ -172,12 +168,8 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    #QTextCodec.setCodecForCStrings( QTextCodec.codecForLocale() )
     ex = MainWindow()
     ex.show()
-    #console = PythonConsole()
-    #console.show()
-    #console.eval_in_thread()
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
