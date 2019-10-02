@@ -111,7 +111,7 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def update_svg(self):
-        self.viewer_window.view.svg_view.load("temp.svg")
+        self.viewer_window.view.loadSVGview("temp.svg")
 
     @pyqtSlot()
     def dataReady(self,err_or_std):
@@ -129,7 +129,7 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def update_bkg(self, filename):
-        self.viewer_window.bkg.load(filename)
+        self.viewer_window.view.loadSVGbkg(filename)
 
     @pyqtSlot()
     def save_svg(self):
