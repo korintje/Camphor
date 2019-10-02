@@ -106,12 +106,12 @@ class MainWindow(QMainWindow):
     def run_script(self):
         self.output_window.stdout.clear()
         script = self.script_window.edit.toPlainText()
-        self.process.start('python',['-c', script])
-        self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
+        self.process.start('python3',['-c', script])
+        #self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
 
     @pyqtSlot()
     def update_svg(self):
-        self.viewer_window.view.load("temp.svg")
+        self.viewer_window.view.svg_view.load("temp.svg")
 
     @pyqtSlot()
     def dataReady(self,err_or_std):

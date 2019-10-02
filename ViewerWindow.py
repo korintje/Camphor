@@ -22,59 +22,28 @@ class ViewerWindow(QWidget):
         self.initUI()
 
     def initUI(self):
-        # Set the title and window size
         self.setWindowTitle(self.title)
-        # self.setGeometry(self.left, self.top, self.width, self.height)
 
-        # Create parts
-        #self.view = QtSvg.QSvgWidget("ichimatsu.svg")
-        #self.view = SVGView()
-        #policy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        #policy.setHeightForWidth(True)
-        #self.view.setSizePolicy(policy)
-        #self.view.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        #self.view.heightForWidth(10)
-        #self.bkg = QtSvg.QSvgWidget("ichimatsu.svg")
+        self.view = CustomWidget()
 
-        """
-
-        self.button_save = QPushButton("Save", self)
-        self.button_save.setToolTip("Save the current graph")
-
-        self.grid = QGridLayout()
-        self.grid.setSpacing(10)
-        #self.grid.addWidget(self.bkg, 1, 1)
-        #self.grid.addWidget(self.view, 1, 1)
-        self.grid.addWidget(self.button_save, 2, 1)
-        self.setLayout(self.grid)
-        """
         layout = QVBoxLayout()
-        self.custom_widget = CustomWidget()
-        layout.addWidget(self.custom_widget)
+        layout.addWidget(self.view)
         self.setLayout(layout)
 
         self.show()
 
+
 class CustomWidget(QFrame):
+
     def __init__(self, parent=None):
-        #super().__init__()
-        QFrame.__init__(self, parent)
+        super().__init__()
+        #QFrame.__init__(self, parent)
+        self.svg_view = QtSvg.QSvgWidget("ichimatsu.svg")
+        self.svg_bkg = QtSvg.QSvgWidget("ichimatsu.svg")
 
-        # Give the frame a border so that we can see it.
-        self.setFrameStyle(1)
-
-        self.view = QtSvg.QSvgWidget("ichimatsu.svg")
-        self.bkg = QtSvg.QSvgWidget("ichimatsu.svg")
-        #layout = QVBoxLayout()
         layout = QGridLayout()
-        #self.grid.setSpacing(10)
-        layout.addWidget(self.bkg, 1, 1)
-        layout.addWidget(self.view, 1, 1)
-        #layout.addWidget(self.button_save, 2, 1)
-        #self.setLayout(self.grid)
-        #self.label = QLabel('Test')
-
-        #layout.addWidget(self.view)
+        layout.addWidget(self.svg_bkg, 1, 1)
+        layout.addWidget(self.svg_view, 1, 1)
         self.setLayout(layout)
 
     def resizeEvent(self, event):
@@ -83,14 +52,3 @@ class CustomWidget(QFrame):
         new_size = QSize(10, 10)
         new_size.scale(event.size(), Qt.KeepAspectRatio)
         self.resize(new_size)
-
-class SVGView(QtSvg.QSvgWidget):
-
-    def __init__(self):
-        super().__init__()
-        policy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        policy.setHeightForWidth(True)
-        self.setSizePolicy(policy)
-
-    def heightForWidth(self, width):
-        return width
