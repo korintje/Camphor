@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
         #Connect Slots
         self.script_window.button_exec.clicked.connect(lambda: self.run_script())
         self.script_window.button_read.clicked.connect(lambda: self.read_svg())
-        self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
+        #self.viewer_window.button_save.clicked.connect(lambda: self.save_svg())
 
         #Assign Shortcuts
         self.shortcut_update = QShortcut(QKeySequence("Ctrl+R"), self)
